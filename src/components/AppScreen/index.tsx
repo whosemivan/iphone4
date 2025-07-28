@@ -21,6 +21,8 @@ export default function AppScreen({appName}: { appName: string }) {
                 return <YTApp />;
             case 'Photos':
                 return <GalleryApp />;
+            default:
+                return <div>App not found: {appName}</div>;
         }
     }
 
