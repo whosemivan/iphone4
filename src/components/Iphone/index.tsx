@@ -12,7 +12,6 @@ export default function Iphone() {
     const [openedApp, setOpenedApp] = useState<string | null>(null);
 
     const handleOpenApp = (appName: string) => {
-        console.log(appName);
         setOpenedApp(appName);
     };
 

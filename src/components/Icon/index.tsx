@@ -1,7 +1,13 @@
 import Image from "next/image";
 import styles from "./styles.module.scss";
 
-export default function Icon({image, name, isMenu, onClick}) {
+interface IconProps {
+    image: string;
+    name: string;
+    isMenu: boolean;
+    onClick?: (appName: string) => void;
+};
+export default function Icon({image, name, isMenu, onClick}: IconProps) {
 
     const onIconClick = () => {
         if (name === '.Solutions' || !onClick) {
