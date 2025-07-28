@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./styles.module.scss";
 import {motion, AnimatePresence} from "framer-motion";
 import InstaApp from "@/components/InstaApp";
@@ -8,7 +7,7 @@ import YTApp from "@/components/YTApp";
 import GalleryApp from "@/components/GalleryApp";
 import {JSX} from "react";
 
-export default function AppScreen({appName}) {
+export default function AppScreen({appName}: { appName: string }) {
 
     const renderApp = (appName: string): JSX.Element => {
         switch (appName) {
