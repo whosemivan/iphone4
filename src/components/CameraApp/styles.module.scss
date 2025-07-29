@@ -1,0 +1,32 @@
+.cameraApp {
+  background-color: #0a0a0a;
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  &::before {
+    content: "";
+    background-image: url("/photoApp.svg");
+    width: 272px;
+    height: 64px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &::after {
+    content: "";
+    background-image: url("/photoApp2.svg");
+    width: 272px;
+    height: 38px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

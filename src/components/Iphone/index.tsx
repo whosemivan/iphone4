@@ -10,6 +10,7 @@ import AppScreen from '@/components/AppScreen/index';
 export default function Iphone() {
     const [time, setTime] = useState(getFormattedTime());
     const [openedApp, setOpenedApp] = useState<string | null>(null);
+    const [isTurnOn, setTurnOn] = useState<boolean>(true);
 
     const handleOpenApp = (appName: string) => {
         setOpenedApp(appName);
@@ -33,8 +34,11 @@ export default function Iphone() {
 
     return (
         <div className={styles.block}>
+            <button onClick={() => setTurnOn(!isTurnOn)} className={styles.turnoffBtn}>
+                <span className="visually-hidden">Turn off</span>
+            </button>
             <div className={styles.box}>
-                <div className={styles.screen}>
+                <div className={isTurnOn ? styles.screen : [styles.screen, styles.screenOff].join(' ')}>
                     <div className={styles.topPanel}>
                         <span className={styles.net}>3G</span>
                         <span className={styles.time}>{time}</span>
@@ -48,10 +52,9 @@ export default function Iphone() {
                         height={408}
                         alt="wallpaper"
                     />
-
                     <div className={styles.iconsTable}>
                         <Icon image="/icons/photo.svg" name="Photos" isMenu={false} onClick={handleOpenApp}/>
-                        <Icon image="/icons/solutions.svg" name=".Solutions" isMenu={false} />
+                        <Icon image="/icons/solutions.svg" name=".Solutions" isMenu={false}/>
                         <Icon image="/icons/instagram.svg" name="Instagram" isMenu={false} onClick={handleOpenApp}/>
                         <Icon image="/icons/spotify.svg" name="Spotify" isMenu={false} onClick={handleOpenApp}/>
                         <Icon image="/icons/appstore.svg" name="AppStore" isMenu={false} onClick={handleOpenApp}/>
@@ -62,10 +65,10 @@ export default function Iphone() {
                         <Icon image="/icons/phone.svg" name="Phone" isMenu={true}/>
                         <Icon image="/icons/iPod.svg" name="iPod" isMenu={true}/>
                         <Icon image="/icons/notes.svg" name="Notes" isMenu={true}/>
-                        <Icon image="/icons/camera.svg" name="Camera" isMenu={true}/>
+                        <Icon image="/icons/camera.svg" name="Camera" isMenu={true} onClick={handleOpenApp}/>
                     </div>
 
-                    {openedApp && <AppScreen appName={openedApp} />}
+                    {openedApp && <AppScreen appName={openedApp}/>}
                 </div>
 
                 <button type="button" className={styles.closeBtn} onClick={() => handleCloseApp()}>

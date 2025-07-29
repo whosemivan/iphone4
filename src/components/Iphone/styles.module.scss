@@ -21,6 +21,18 @@
   }
 }
 
+.turnoffBtn {
+  position: absolute;
+  top: -8px;
+  right: 55px;
+  width: 45px;
+  height: 6px;
+  border-radius: 2px;
+  background-color: #818489;
+  border: none;
+  cursor: pointer;
+}
+
 .box {
   display: flex;
   flex-direction: column;
@@ -58,6 +70,16 @@
   z-index: 2;
 }
 
+.screenOff::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 272px;
+  height: 408px;
+  background-color: #151a1e;
+}
+
+
 .topPanel {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -70,6 +92,30 @@
   padding: 3px 4px;
   font-size: 12px;
   color: #c9cfcf;
+
+  &::before {
+    // buttons for volume (decorate)
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: 15px;
+    width: 3px;
+    height: 15px;
+    background-color: #818489;
+    border-radius: 2px;
+    box-shadow: 0px 41px 0px 0px #818489;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: -37px;
+    width: 3px;
+    height: 17px;
+    background-color: #818489;
+    border-radius: 2px;
+  }
 }
 
 .net {

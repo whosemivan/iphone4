@@ -5,6 +5,7 @@ import SpotifyApp from "@/components/SpotifyApp";
 import AppStoreApp from "@/components/AppStore";
 import YTApp from "@/components/YTApp";
 import GalleryApp from "@/components/GalleryApp";
+import CameraApp from "@/components/CameraApp";
 import {JSX} from "react";
 
 export default function AppScreen({appName}: { appName: string }) {
@@ -21,6 +22,8 @@ export default function AppScreen({appName}: { appName: string }) {
                 return <YTApp />;
             case 'Photos':
                 return <GalleryApp />;
+            case 'Camera':
+                return <CameraApp />;
             default:
                 return <div>App not found: {appName}</div>;
         }
