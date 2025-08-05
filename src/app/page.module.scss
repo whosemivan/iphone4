@@ -35,6 +35,19 @@
   }
 }
 
+.toggleBtn {
+  position: fixed;
+  top: 10px;
+  left: 60px;
+  color: #0030ad;
+  font-size: 25px;
+  text-decoration: underline;
+  background: transparent;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 @media (max-height: 777px) {
   .link,
   .portfolioLink {
@@ -62,5 +75,9 @@
     right: 0;
     bottom: auto;
     top: 45%;
+  }
+
+  .toggleBtn {
+    left: auto;
   }
 }
